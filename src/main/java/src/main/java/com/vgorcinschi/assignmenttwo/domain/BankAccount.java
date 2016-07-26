@@ -63,6 +63,7 @@ public abstract class BankAccount {
 
     public void setMonthlyStartingBalance(double monthlyStartingBalance) {
         this.monthlyStartingBalance = monthlyStartingBalance;
+        monthlyCurrentBalance = this.monthlyStartingBalance;
     }
 
     public double getMonthlyCurrentBalance() {
