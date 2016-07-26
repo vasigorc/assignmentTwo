@@ -25,5 +25,5 @@ public abstract class MenuItem implements Command{
     }
 
     @Override
-    public abstract void execute();
+    public abstract void execute(src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu, java.util.Scanner sc);
 }

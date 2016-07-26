@@ -6,6 +6,7 @@
 package src.main.java.com.vgorcinschi.assignmenttwo.domain.impl;
 
 import java.util.HashMap;
+import java.util.Scanner;
 import src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu;
 
 /**
@@ -13,11 +14,19 @@ import src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu;
  * @author v_gorcin
  */
 public class SavingsMenu extends Menu {
-    private final SavingsAccount account = new SavingsAccount();
+    private SavingsAccount account = null;
 
     public SavingsMenu() {
-        super("Savings Menu", new HashMap<>());
-        
+        super("Savings Menu", new HashMap<>());        
     }
 
+    @Override
+    public void execute(Menu menu, Scanner sc) {
+        if (account == null) {
+            account = new SavingsAccount();
+        }
+    }
+    
+    
+    
 }

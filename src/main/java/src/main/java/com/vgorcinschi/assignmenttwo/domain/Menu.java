@@ -26,7 +26,7 @@ public abstract class Menu implements Command {
     }    
     
     @Override
-    public void execute() {
+    public void execute(src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu, java.util.Scanner sc) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

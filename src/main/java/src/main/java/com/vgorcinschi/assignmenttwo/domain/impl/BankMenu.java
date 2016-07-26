@@ -20,14 +20,14 @@ public class BankMenu extends Menu {
         this.name = "Menu";
         this.options.put("A: Savings", null);
         this.options.put("B: Checking", null);
-        this.options.put("C: Exit", () -> {
+        this.options.put("C: Exit", (src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu, java.util.Scanner sc) -> {
             System.out.println("Thank you, come back!");
             System.exit(1);
         });
     }
 
     @Override
-    public void execute() {
+    public void execute(src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu, java.util.Scanner sc) {
         char choice = 0;
         //iterate until the user chooses to close the program
         while (choice != 'C') {
@@ -36,7 +36,7 @@ public class BankMenu extends Menu {
             String input = sc.nextLine();
             options.forEach((k, v) -> {
                 if (k.substring(0, 1).equalsIgnoreCase(input.substring(0, 1))) {
-                    v.execute();
+                    v.execute(this, sc);
                 }
             });
         }

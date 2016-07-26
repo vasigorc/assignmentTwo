@@ -11,5 +11,5 @@ package src.main.java.com.vgorcinschi.assignmenttwo.domain;
  */
 public interface Command {
 
-    public void execute();
+    public void execute(src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu, java.util.Scanner sc);
 }
