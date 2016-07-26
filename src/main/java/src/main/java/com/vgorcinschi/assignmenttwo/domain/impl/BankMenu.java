@@ -18,12 +18,14 @@ public class BankMenu extends Menu {
 
     public BankMenu() {
         this.name = "Menu";
-        this.options.put("A: Savings", null);
-        this.options.put("B: Checking", null);
-        this.options.put("C: Exit", (src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu, java.util.Scanner sc) -> {
-            System.out.println("Thank you, come back!");
-            System.exit(1);
-        });
+        this.options.put("A: Savings", new SavingsMenu());
+        this.options.put("B: Checking", new CheckingMenu());
+        this.options.put("C: Exit",
+                (src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu,
+                        java.util.Scanner sc) -> {
+                    System.out.println("Thank you, come back!");
+                    System.exit(1);
+                });
     }
 
     @Override

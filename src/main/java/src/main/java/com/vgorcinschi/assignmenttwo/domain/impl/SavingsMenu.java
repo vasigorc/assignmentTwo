@@ -26,7 +26,4 @@ public class SavingsMenu extends Menu {
             account = new SavingsAccount();
         }
     }
-    
-    
-    
 }
