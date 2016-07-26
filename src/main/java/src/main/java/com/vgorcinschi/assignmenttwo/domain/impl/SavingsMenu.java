@@ -8,6 +8,7 @@ package src.main.java.com.vgorcinschi.assignmenttwo.domain.impl;
 import java.util.HashMap;
 import java.util.Scanner;
 import src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu;
+import src.main.java.com.vgorcinschi.assignmenttwo.domain.helpers.WithdrawCommandExecutor;
 
 /**
  *
@@ -24,6 +25,7 @@ public class SavingsMenu extends Menu {
     public void execute(Menu menu, Scanner sc) {
         if (account == null) {
             account = new SavingsAccount();
+            options.put("A: Deposit", new WithdrawCommandExecutor(account));
         }
     }
 }
