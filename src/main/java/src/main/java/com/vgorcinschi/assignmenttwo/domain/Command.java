@@ -5,11 +5,14 @@
  */
 package src.main.java.com.vgorcinschi.assignmenttwo.domain;
 
+import java.util.OptionalDouble;
+import java.util.Scanner;
+
 /**
  *
  * @author v_gorcin
  */
 public interface Command {
 
-    public void execute(src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu, java.util.Scanner sc);
+    public void execute(Menu menu, Scanner sc, OptionalDouble optional);
 }
