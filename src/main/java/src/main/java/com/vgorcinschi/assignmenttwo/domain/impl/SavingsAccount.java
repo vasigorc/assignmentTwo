@@ -13,6 +13,10 @@ import src.main.java.com.vgorcinschi.assignmenttwo.domain.BankAccount;
  */
 public class SavingsAccount extends BankAccount {
 
+    public SavingsAccount(double monthlyBalance, double annualInterestRate) {
+        super(monthlyBalance, annualInterestRate);
+    }
+    
     @Override
     public void doMonthlyReport() {
         //savings account service charges:

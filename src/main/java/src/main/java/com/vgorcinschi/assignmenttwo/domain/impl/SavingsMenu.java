@@ -8,7 +8,7 @@ package src.main.java.com.vgorcinschi.assignmenttwo.domain.impl;
 import java.util.HashMap;
 import java.util.Scanner;
 import src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu;
-import src.main.java.com.vgorcinschi.assignmenttwo.domain.helpers.WithdrawCommandExecutor;
+import static src.main.java.com.vgorcinschi.assignmenttwo.util.NumberFormatter.validateDoubleValue;
 
 /**
  *
@@ -23,9 +23,14 @@ public class SavingsMenu extends Menu {
 
     @Override
     public void execute(Menu menu, Scanner sc) {
-        if (account == null) {
-            account = new SavingsAccount();
-            options.put("A: Deposit", new WithdrawCommandExecutor(account));
+        if (account == null) {            
+            //collect starting balance and annual rate
+            System.out.println("Thank you for opening a Savings Account.");
+            double startingBalance = validateDoubleValue(()->"initial balance",
+                    2, sc);
+            double annualRate = validateDoubleValue(()->"annual rate", 2, sc);
+            account = new SavingsAccount(startingBalance, annualRate);            
         }
+        
     }
 }
