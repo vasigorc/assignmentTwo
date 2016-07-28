@@ -13,6 +13,10 @@ import src.main.java.com.vgorcinschi.assignmenttwo.domain.BankAccount;
  */
 public class CheckingAccount extends BankAccount {
 
+    public CheckingAccount(double monthlyBalance, double annualInterestRate) {
+        super(monthlyBalance, annualInterestRate);
+    }
+    
     @Override
     public void doMonthlyReport() {
         monthlyServiceCharge += 5 + (countMonthlyWithdrawals * 0.1);
@@ -21,7 +25,7 @@ public class CheckingAccount extends BankAccount {
 
     @Override
     public void makeWithdraw(double withdraw) {
-        if (withdraw < monthlyCurrentBalance) {
+        if (withdraw > monthlyCurrentBalance) {
             //is this service charge a one time or it is appended to the monthly?
             monthlyCurrentBalance -= 15;
             super.makeWithdraw(withdraw); //To change body of generated methods, choose Tools | Templates.

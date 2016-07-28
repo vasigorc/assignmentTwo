@@ -24,7 +24,7 @@ public class CheckingMenu extends Menu {
     @Override
     public void execute(Menu menu, Scanner sc, java.util.OptionalDouble optional) {
         if (account == null) {
-            account = new CheckingAccount();
+//            account = new CheckingAccount();
         }
     }
 

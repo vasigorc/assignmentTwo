@@ -43,9 +43,9 @@ public abstract class BankAccount {
 
     public void updateStatus() {
         if (this instanceof SavingsAccount) {
-            this.active = this.monthlyStartingBalance >= 25;
+            this.active = this.monthlyCurrentBalance >= 25;
         } else {
-            this.active = this.monthlyStartingBalance >= 5;
+            this.active = this.monthlyCurrentBalance >= 5;
         }
     }
 
@@ -137,13 +137,13 @@ public abstract class BankAccount {
     public void makeWithdraw(double withdraw) {
         if (withdraw < monthlyCurrentBalance) {
             monthlyTotalWithdrawals += withdraw;
-            countMonthlyDeposits++;
+            countMonthlyWithdrawals++;
             monthlyCurrentBalance -= withdraw;
-            updateStatus();
         } else {
             System.out.println("Insufficient funds. You don't have enough money."
                     + " Transaction rolled back.");
         }
+        updateStatus();
     }
 
     public void calculateInterest() {

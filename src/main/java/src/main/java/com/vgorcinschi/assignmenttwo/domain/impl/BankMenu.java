@@ -42,6 +42,7 @@ public class BankMenu extends Menu {
                     v.execute(this, sc, empty());
                 }
             });
+            choice = input.charAt(0);
         }
 
     }
