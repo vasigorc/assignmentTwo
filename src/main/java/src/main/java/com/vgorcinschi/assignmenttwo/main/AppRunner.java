@@ -5,12 +5,15 @@
  */
 package src.main.java.com.vgorcinschi.assignmenttwo.main;
 
+import src.main.java.com.vgorcinschi.assignmenttwo.domain.impl.BankMenu;
+
 /**
  *
  * @author vgorcinschi
  */
 public class AppRunner {
+
     public static void main(String[] args) {
-        
+        new BankMenu().run();
     }
 }

@@ -5,7 +5,7 @@
  */
 package src.main.java.com.vgorcinschi.assignmenttwo.domain;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -22,7 +22,7 @@ public abstract class Menu implements Command {
     }
 
     public Menu() {
-        this("Empty Menu", new HashMap<>());
+        this("Empty Menu", new LinkedHashMap<>());
     }    
     
     @Override

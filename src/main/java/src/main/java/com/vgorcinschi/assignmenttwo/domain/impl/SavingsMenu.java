@@ -5,7 +5,7 @@
  */
 package src.main.java.com.vgorcinschi.assignmenttwo.domain.impl;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import static java.util.OptionalDouble.empty;
 import static java.util.OptionalDouble.of;
 import java.util.Scanner;
@@ -26,7 +26,7 @@ public class SavingsMenu extends Menu {
     private SavingsAccount account = null;
 
     public SavingsMenu() {
-        super("Savings Menu", new HashMap<>());
+        super("Savings Menu", new LinkedHashMap<>());
     }
 
     @Override

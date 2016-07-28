@@ -5,6 +5,7 @@
  */
 package src.main.java.com.vgorcinschi.assignmenttwo.domain;
 
+import java.text.NumberFormat;
 import java.util.concurrent.atomic.AtomicInteger;
 import src.main.java.com.vgorcinschi.assignmenttwo.domain.impl.SavingsAccount;
 
@@ -20,6 +21,7 @@ public abstract class BankAccount {
     protected boolean active = false;
     protected int countMonthlyDeposits, countMonthlyWithdrawals, accountNumber;
     private static AtomicInteger number = new AtomicInteger(1);
+    private final NumberFormat nf = NumberFormat.getCurrencyInstance();
 
     public BankAccount(double monthlyBalance, double annualInterestRate) {
         accountNumber = number.getAndIncrement();
@@ -155,6 +157,10 @@ public abstract class BankAccount {
         monthlyCurrentBalance -= monthlyServiceCharge;
         calculateInterest();
         updateStatus();
+        System.out.println("Your current balance is: "+nf.format(monthlyCurrentBalance)+"\n"
+                + "You made "+countMonthlyWithdrawals+" withdrawals and "+
+                countMonthlyDeposits+" deposits this month.\n"
+                + "Your service fee for this period constituted"+nf.format(monthlyServiceCharge));
         countMonthlyDeposits = 0;
         countMonthlyWithdrawals = 0;
         monthlyServiceCharge = 0;

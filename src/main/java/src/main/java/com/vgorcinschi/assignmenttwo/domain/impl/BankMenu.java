@@ -25,7 +25,7 @@ public class BankMenu extends Menu {
                 (src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu menu,
                         java.util.Scanner sc, java.util.OptionalDouble optional) -> {
                     System.out.println("Thank you, come back!");
-                    System.exit(1);
+                    System.exit(0);
                 });
     }
 
@@ -44,7 +44,12 @@ public class BankMenu extends Menu {
             });
             choice = input.charAt(0);
         }
+    }
 
+    public void run() {
+        //start the flywheel
+    System.out.println("Welcome to the Bank Menu!");
+        execute(this, sc, empty());
     }
 
 }

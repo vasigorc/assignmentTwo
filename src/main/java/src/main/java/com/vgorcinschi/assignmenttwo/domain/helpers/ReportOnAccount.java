@@ -24,8 +24,8 @@ public class ReportOnAccount extends SimpleBankOperation {
     
     @Override
     public void execute(Menu menu, Scanner sc, OptionalDouble optional) {
-        account.doMonthlyReport();
         log.info("Monthly report triggered for account number " + account.getAccountNumber());
+        account.doMonthlyReport();        
     }
     
 }

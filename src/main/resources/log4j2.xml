@@ -20,7 +20,7 @@
         <root level="info" additivity="false">
             <appender-ref ref="Console" />
         </root>        
-        <logger name="src.main.java.com.vgorcinschi.assignmenttwo" 
+        <logger name="src.main.java.com.vgorcinschi" 
                 level="warn" additivity="false">
             <appender-ref ref="AssignmentTwoAppender" />
             <appender-ref ref="Console"/>           

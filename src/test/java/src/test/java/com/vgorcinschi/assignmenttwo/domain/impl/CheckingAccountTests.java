@@ -38,4 +38,18 @@ public class CheckingAccountTests {
         account.makeWithdraw(60);
         assertTrue("The result ought to be 50$-15$ penalty, i.e.: 35$", 35 == account.getMonthlyCurrentBalance());
     }
+    
+    @Test
+    public void appendableMonthlyCharges(){
+        //we only withdraw 1$. So the onthly service fee has to be 5.10$
+        account.makeWithdraw(1);
+        System.out.println("\nappendableMonthlyCharges:\n");
+        //deduct the service fee
+        double intermediaryResult = account.getMonthlyCurrentBalance()-5.10;
+        //imitate manually the interest calculation
+        double withoutAdditionalCharge = intermediaryResult + intermediaryResult * (account.getAnnualInterestRate() / 12);
+        account.doMonthlyReport();
+        //compare the two results
+        assertTrue(account.getMonthlyCurrentBalance() == withoutAdditionalCharge);
+    }
 }
