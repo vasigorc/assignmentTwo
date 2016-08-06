@@ -164,6 +164,7 @@ public abstract class BankAccount {
         countMonthlyDeposits = 0;
         countMonthlyWithdrawals = 0;
         monthlyServiceCharge = 0;
+        monthlyStartingBalance = monthlyCurrentBalance;
     }
 
     public int getAccountNumber() {
