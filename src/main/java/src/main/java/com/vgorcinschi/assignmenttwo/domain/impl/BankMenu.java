@@ -7,7 +7,9 @@ package src.main.java.com.vgorcinschi.assignmenttwo.domain.impl;
 
 import static java.util.OptionalDouble.empty;
 import java.util.Scanner;
+import static org.apache.commons.lang3.StringUtils.containsAny;
 import src.main.java.com.vgorcinschi.assignmenttwo.domain.Menu;
+import src.main.java.com.vgorcinschi.assignmenttwo.util.StringValidator;
 
 /**
  *
@@ -36,7 +38,9 @@ public class BankMenu extends Menu {
         while (choice != 'C') {
             System.out.println("Bank Menu");
             options.forEach((k, v) -> System.out.println(k));
-            String input = sc.nextLine();
+            String input = StringValidator.stringValidator((s) -> {
+                return (s.length() == 1 && containsAny(s.toUpperCase(), "ABC"));
+            }, () -> "Input must be exactly one character long. Allowed characters are: A, B, C", () -> "selection", sc);
             options.forEach((k, v) -> {
                 if (k.substring(0, 1).equalsIgnoreCase(input.substring(0, 1))) {
                     v.execute(this, sc, empty());
